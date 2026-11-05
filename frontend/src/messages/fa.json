@@ -1,0 +1,383 @@
+{
+    "nav": {
+        "home": "خانه",
+        "services": "خدمات",
+        "doctors": "پزشکان",
+        "about": "درباره ما",
+        "contact": "تماس با ما",
+        "getStarted": "شروع کنید",
+        "login": "ورود",
+        "signup": "ثبت‌نام",
+        "dashboard": "داشبورد",
+        "logout": "خروج"
+    },
+    "home": {
+        "nav": {
+            "doctors": "پزشکان متخصص",
+            "services": "خدمات تخصصی",
+            "about": "درباره ما"
+        },
+        "hero": {
+            "verified": "شبکه درمانی تایید شده",
+            "title": "پلتفرم هوشمند سلامت <span class='text-blue-500'>مبتنی بر هوش مصنوعی</span>",
+            "subtitle": "ارتباط مستقیم با برترین متخصصان و تشخیص دقیق با کمک هوش مصنوعی برای مراقبت‌های پزشکی سریع‌تر و هوشمندتر.",
+            "common": {
+                "search": "جستجو"
+            },
+            "searchPlaceholder": "جستجوی تخصص، نام پزشک و..."
+        },
+        "mission": {
+            "mission": "ماموریت ما",
+            "missionDesc": "دیجیتالی کردن خدمات سلامت برای همه، در هر کجا.",
+            "vision": "چشم‌انداز ما",
+            "visionDesc": "آینده‌ای که هوش مصنوعی و انسان برای سلامتی با هم همکاری می‌کنند.",
+            "who": "ما کی هستیم",
+            "whoDesc": "تیمی از کارشناسان پزشکی و پژوهشگران هوش مصنوعی."
+        },
+        "about": {
+            "tag": "درباره داکتریس",
+            "title": "ارائه بهترین <br/> خدمات پزشکی",
+            "p1": "داکتریس پیشرو در ادغام هوش مصنوعی پیشرفته با تخصص انسانی برای ارائه راهکارهای درمانی در دسترس، کارآمد و شخصی‌سازی شده است.",
+            "p2": "ماموریت ما توانمندسازی بیماران با بینش‌های لحظه‌ای و اتصال بدون درز آن‌ها به متخصصان درجه یک است.",
+            "feature1": "پشتیبانی ۲۴/۷ هوش مصنوعی",
+            "feature2": "متخصصان تایید شده",
+            "feature3": "سوابق پزشکی امن"
+        },
+        "services": {
+            "tag": "خدمات ما",
+            "title": "مراقبت‌های شخصی‌سازی شده",
+            "subtitle": "مجموعه گسترده خدمات پزشکی ما را که با فناوری هوشمند تقویت شده است، کاوش کنید.",
+            "viewAll": "مشاهده تمامی خدمات"
+        },
+        "testimonials": {
+            "tag": "نظرات کاربران",
+            "title": "بیماران ما چه می‌گویند"
+        },
+        "cta": {
+            "title": "آماده شروع هستید؟",
+            "subtitle": "به هزاران بیماری بپیوندید که برای مدیریت سلامت خود به داکتریس اعتماد کرده‌اند.",
+            "button": "ایجاد حساب کاربری رایگان"
+        }
+    },
+    "auth": {
+        "welcomeBack": "خوش آمدید",
+        "joinDoctorHub": "به DoctorHub بپیوندید",
+        "phoneNumber": "شماره تلفن",
+        "password": "رمز عبور",
+        "confirmPassword": "تکرار رمز عبور",
+        "firstName": "نام",
+        "lastName": "نام خانوادگی",
+        "forgotPassword": "رمز عبور را فراموش کرده‌اید؟",
+        "dontHaveAccount": "حساب کاربری ندارید؟",
+        "alreadyHaveAccount": "قبلاً ثبت‌نام کرده‌اید؟",
+        "registerNow": "همین حالا ثبت‌نام کنید",
+        "signIn": "ورود",
+        "iAmA": "من یک",
+        "patient": "بیمار",
+        "doctor": "پزشک",
+        "admin": "مدیر",
+        "createAccount": "ایجاد حساب کاربری",
+        "enterCredentials": "اطلاعات خود را برای دسترسی به حساب کاربری وارد کنید"
+    },
+    "dashboard": {
+        "nav": {
+            "adminPanel": "پیشخوان مدیریت",
+            "userManagement": "مدیریت کاربران",
+            "finance": "گزارشات مالی",
+            "systemSettings": "تنظیمات سیستم",
+            "doctorPanel": "پنل پزشک",
+            "prescriptions": "ثبت نسخه الکترونیک",
+            "myPatients": "بیماران من",
+            "schedule": "زمانبندی نوبت‌ها",
+            "myDashboard": "داشبورد من",
+            "myAppointments": "نوبت‌های من",
+            "invoices": "فاکتورها",
+            "messages": "پیام‌ها",
+            "settings": "تنظیمات",
+            "logout": "خروج از حساب",
+            "proVersion": "نسخه حرفه‌ای",
+            "proDesc": "دسترسی به مشاوره‌های نامحدود و اولویت در نوبت‌دهی",
+            "upgrade": "ارتقا اکانت"
+        },
+        "roles": {
+            "admin": "مدیر سیستم",
+            "doctor": "پزشک متخصص",
+            "patient": "بیمار عادی",
+            "guest": "میهمان",
+            "allAccess": "دسترسی کل"
+        },
+        "patient": {
+            "welcome": "خوش آمدید",
+            "healthOverview": "وضعیت سلامت شما",
+            "upcomingAppointments": "نوبت‌های آینده",
+            "activePrescriptions": "نسخه‌های فعال",
+            "healthRecords": "سوابق پزشکی",
+            "heartRateAvg": "میانگین ضربان قلب",
+            "viewAll": "مشاهده همه",
+            "duration": "مدت مصرف",
+            "prescribed": "تاریخ تجویز",
+            "healthInsights": "توصیه‌های سلامتی",
+            "insightsMsg": "شاخص‌های سلامتی شما مطلوب است! به برنامه روتین و نوبت‌های آینده خود توجه داشته باشید.",
+            "status": {
+                "active": "فعال",
+                "completed": "پایان یافته"
+            },
+            "at": "در تاریخ"
+        },
+        "doctor": {
+            "goodMorning": "صبح بخیر، دکتر",
+            "totalPatients": "تعداد بیماران",
+            "patientsToday": "امروز {count} بیمار در برنامه شما است",
+            "todayPatients": "بیماران امروز",
+            "appointments": "نوبت‌ها",
+            "prescriptions": "نسخه‌ها",
+            "avgVisitTime": "میانگین زمان ویزیت",
+            "todaySchedule": "برنامه امروز",
+            "recentPatients": "بیماران اخیر",
+            "search": "جستجو",
+            "viewCalendar": "مشاهده تقویم",
+            "newPrescription": "نسخه جدید",
+            "aiAssisted": "تجویز نسخه با کمک هوش مصنوعی",
+            "scheduleManagement": "مدیریت زمانبندی",
+            "updateAvailability": "مشاهده و به‌روزرسانی زمان‌های در دسترس",
+            "patientRecords": "پرونده بیماران",
+            "accessHistory": "دسترسی به سوابق پزشکی بیماران",
+            "lastVisit": "آخرین ویزیت",
+            "status": {
+                "confirmed": "تایید شده",
+                "pending": "در انتظار",
+                "stable": "پایدار",
+                "monitoring": "تحت نظر",
+                "discharged": "ترخیص شده",
+                "inpatient": "بستری",
+                "active": "فعال",
+                "closed": "تعطیل",
+                "approved": "تایید شده",
+                "blocked": "مسدود شده"
+            },
+            "consultation": "مشاوره",
+            "followUp": "پیگیری",
+            "checkUp": "چکاپ",
+            "myPatientsBank": "بانک بیماران من",
+            "pBankDesc": "مدیریت پرونده و سوابق پزشکی اختصاصی بیماران شما.",
+            "addPatient": "افزودن بیمار",
+            "viewProfile": "مشاهده پرونده",
+            "age": "سن",
+            "years": "سال",
+            "bloodGroup": "گروه خونی",
+            "male": "مرد",
+            "female": "زن",
+            "scheduleDesc": "تنظیم ساعات حضور و ظرفیت پذیرش نوبت‌های روزانه.",
+            "updateCalendar": "بروزرسانی تقویم",
+            "myWeeklySchedule": "برنامه هفتگی من",
+            "absence": "عدم حضور",
+            "capacity": "ظرفیت",
+            "slots": "نوبت",
+            "bookingSettings": "تنظیمات نوبت‌دهی",
+            "visitDuration": "زمان هر ویزیت (دقیقه)",
+            "reserveAdvance": "رزرو از چند روز قبل؟",
+            "emergencyAccept": "پذیرش نوبت‌های اورژانسی",
+            "saveSettings": "ذخیره تنظیمات",
+            "until": "تا"
+        },
+        "admin": {
+            "systemOverview": "نمای کلی سیستم",
+            "monitorManage": "نظارت و مدیریت پلتفرم هوشمند سلامت",
+            "totalUsers": "کل کاربران",
+            "activeAppointments": "نوبت‌های فعال",
+            "systemHealth": "سلامت سیستم",
+            "aiUsage": "استفاده از هوش مصنوعی",
+            "userManagement": "مدیریت کاربران",
+            "systemStatistics": "آمار سیستم",
+            "aiConfiguration": "تنظیمات هوش مصنوعی",
+            "activityLogs": "گزارش فعالیت‌ها",
+            "viewAll": "مشاهده همه",
+            "joined": "عضویت در",
+            "dbLoad": "بار پایگاه داده",
+            "apiResponse": "زمان پاسخ API",
+            "storageUsed": "فضای ذخیره‌سازی",
+            "currentProvider": "سرویس‌دهنده فعلی",
+            "usage": "میزان استفاده",
+            "status": "وضعیت",
+            "healthy": "سالم",
+            "configureAI": "تنظیمات هوش مصنوعی",
+            "viewLogs": "مشاهده گزارش‌ها",
+            "requests": "درخواست",
+            "memberMgmt": "مدیریت اعضا",
+            "memberDesc": "کنترل دسترسی، تایید پزشکان و مدیریت کاربران پلتفرم.",
+            "exportExcel": "خروجی اکسل",
+            "addNewMember": "افزودن عضو جدید",
+            "filters": {
+                "all": "همه",
+                "doctors": "پزشکان",
+                "patients": "بیماران",
+                "admins": "مدیران"
+            },
+            "table": {
+                "id": "شناسه",
+                "user": "کاربر",
+                "role": "نقش کاربری",
+                "joinedDate": "تاریخ عضویت",
+                "status": "وضعیت",
+                "actions": "عملیات",
+                "manage": "مدیریت"
+            },
+            "finance": {
+                "title": "گزارشات مالی",
+                "desc": "رهگیری درآمدها، پرداخت‌ها و وضعیت سلامت مالی پلتفرم.",
+                "totalRevenue": "کل درآمد",
+                "monthlyGrowth": "رشد ماهانه",
+                "pendingPayments": "پرداخت‌های معلق",
+                "completedTransactions": "تراکنش‌های موفق",
+                "revenueChart": "نمودار درآمد زمانی",
+                "recentTransactions": "تراکنش‌های اخیر",
+                "amount": "مبلغ",
+                "date": "تاریخ",
+                "method": "روش پرداخت",
+                "invoice": "صورت‌حساب"
+            }
+        },
+        "settings": {
+            "title": "تنظیمات",
+            "tabs": {
+                "profile": "پروفایل شخصی",
+                "security": "امنیت و گذرواژه",
+                "notifications": "اطلاعیه‌ها"
+            },
+            "profile": {
+                "changePhoto": "تغییر عکس",
+                "photoDesc": "تصویر شما در تمامی صفحات و چت‌ها نمایش داده می‌شود. از عکس واضح استفاده کنید.",
+                "uploadNew": "آپلود عکس جدید",
+                "remove": "حذف عکس",
+                "firstName": "نام",
+                "lastName": "نام خانوادگی",
+                "phone": "شماره همراه",
+                "email": "ایمیل",
+                "bio": "بیوگرافی کوتاه",
+                "bioPlaceholder": "چیزی درباره خودتان بنویسید...",
+                "saveChanges": "ذخیره تمامی تغییرات"
+            },
+            "security": {
+                "changePassword": "تغییر رمز عبور",
+                "passwordDesc": "برای امنیت بیشتر، توصیه می‌شود هر چند ماه یکبار رمز خود را تغییر دهید.",
+                "currentPassword": "رمز عبور فعلی",
+                "newPassword": "رمز عبور جدید",
+                "confirmPassword": "تکرار رمز عبور جدید",
+                "update": "آپدیت رمز عبور",
+                "deleteAccount": "حذف حساب کاربری",
+                "deleteDesc": "با حذف حساب، تمامی اطلاعات پزشکی و نوبت‌های شما پاک خواهد شد.",
+                "deletePermanently": "حذف دائمی"
+            },
+            "notifications": {
+                "title": "تنظیمات اطلاع‌رسانی",
+                "desc": "نحوه دریافت خبرها و یادآوری‌ها را مدیریت کنید.",
+                "save": "ذخیره تنظیمات",
+                "items": {
+                    "reminders": "یادآوری نوبت‌ها (پیامک)",
+                    "remindersDesc": "یک روز قبل از ویزیت برای شما پیامک ارسال می‌شود.",
+                    "newsletter": "خبرنامه پزشکی",
+                    "newsletterDesc": "جدیدترین مقالات و اخبار سلامت در ایمیل شما.",
+                    "discounts": "تخفیف‌های داروخانه",
+                    "discountsDesc": "اطلاع‌رسانی درباره جشنواره‌های فروش دارو و تجهیزات.",
+                    "updates": "آپدیت‌های پلتفرم",
+                    "updatesDesc": "تغییرات سیستمی و امکانات جدید پلتفرم."
+                }
+            }
+        }
+    },
+    "common": {
+        "loading": "در حال بارگذاری...",
+        "error": "خطا",
+        "success": "موفقیت",
+        "save": "ذخیره",
+        "cancel": "لغو",
+        "delete": "حذف",
+        "edit": "ویرایش",
+        "view": "مشاهده",
+        "download": "دانلود",
+        "upload": "آپلود",
+        "search": "جستجو",
+        "filter": "فیلتر",
+        "sort": "مرتب‌سازی",
+        "explore": "مشاهده جزئیات",
+        "currency": "تومان",
+        "online": "آنلاین",
+        "offline": "آفلاین",
+        "daysAgo": "{count} روز پیش",
+        "weeksAgo": "{count} هفته پیش",
+        "yesterday": "دیروز",
+        "today": "امروز"
+    },
+    "doctors": {
+        "hero": {
+            "tag": "یافتن متخصص",
+            "title": "پزشک متخصص خود را بیابید",
+            "subtitle": "ارتباط با متخصصان تایید شده"
+        },
+        "search": {
+            "placeholder": "جستجوی پزشک بر اساس نام یا تخصص...",
+            "showingResults": "نمایش {count} نتیجه",
+            "popular": "محبوب‌ترین‌ها",
+            "noResults": "پزشکی یافت نشد",
+            "tryDifferent": "معیارهای جستجو را تغییر دهید"
+        },
+        "specialties": {
+            "all": "تمام تخصص‌ها"
+        },
+        "card": {
+            "exp": "سال تجربه",
+            "consultation": "هزینه مشاوره",
+            "session": "هر جلسه",
+            "bookNow": "رزرو نوبت",
+            "availability": {
+                "today": "امروز آزاد"
+            }
+        }
+    },
+    "pharmacy": {
+        "hero": {
+            "tag": "داروخانه آنلاین",
+            "title": "داروخانه مورد اعتماد شما",
+            "subtitle": "سفارش دارو با نسخه پزشک",
+            "searchPlaceholder": "جستجوی دارو..."
+        }
+    },
+    "services": {
+        "hero": {
+            "tag": "خدمات ما",
+            "title": "خدمات درمانی",
+            "subtitle": "مراقبت‌های پزشکی جامع"
+        }
+    },
+    "days": {
+        "sat": "شنبه",
+        "sun": "یکشنبه",
+        "mon": "دوشنبه",
+        "tue": "سه‌شنبه",
+        "wed": "چهارشنبه",
+        "thu": "پنج‌شنبه",
+        "fri": "جمعه"
+    },
+    "chat": {
+        "title": "دستیار هوشمند سلامت",
+        "persona": "هوش مصنوعی پزشکی",
+        "greeting": "سلام! من دستیار هوشمند سلامت شما هستم",
+        "subtitle": "هر سوال پزشکی که دارید بپرسید، پاسخ فوری دریافت کنید",
+        "placeholder": "سوال خود را بنویسید...",
+        "clear": "پاک کردن چت",
+        "researchMode": "حالت تحقیق هوشمند",
+        "aiOnly": "پاسخ عمومی",
+        "sourcesFound": "منابع یافت شده:",
+        "match": "تطابق",
+        "error": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید.",
+        "connectionError": "خطا در اتصال. لطفاً اینترنت خود را بررسی کنید.",
+        "prompts": {
+            "cold": "سرماخوردگی دارم",
+            "heart": "سلامت قلب",
+            "allergy": "علائم آلرژی",
+            "pharmacy": "سفارش دارو",
+            "headache": "سردرد",
+            "fever": "تب"
+        }
+    }
+}

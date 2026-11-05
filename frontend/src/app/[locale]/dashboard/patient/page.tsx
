@@ -1,0 +1,303 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
+import { Link, useRouter } from '@/i18n/navigation';
+import { 
+    Calendar, MessageSquare, FileText, Pill, Heart, 
+    Clock, User, Bell, Settings, LogOut, ChevronRight,
+    Activity, Thermometer, Wind, Droplets, Brain, Search,
+    Plus, ArrowRight, HeartPulse, Sparkles, Shield,
+    Clock3, CheckCircle, ArrowLeft, Phone, Mail, MapPin,
+    Smile, CalendarCheck, Prescription, Ambulance
+} from 'lucide-react';
+import { useAuthStore } from '@/store/useAuthStore';
+
+export default function PatientDashboard() {
+    const t = useTranslations('dashboard.patient');
+    const locale = useLocale();
+    const { user, isAuthenticated } = useAuthStore();
+    const router = useRouter();
+    const isRTL = locale === 'fa';
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+        const storedUser = localStorage.getItem('user');
+        const storedToken = localStorage.getItem('token');
+
+        if (!storedUser || !storedToken) {
+            router.push('/login');
+            return;
+        }
+    }, [router]);
+
+    const handleLogout = () => {
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+        router.push('/login');
+    };
+
+    if (!mounted) return null;
+
+    // Parse user data
+    const userData = user ? (typeof user === 'string' ? JSON.parse(user) : user) : null;
+    const userName = userData?.first_name || userData?.name || (isRTL ? 'کاربر' : 'User');
+
+    const stats = [
+        { label: isRTL ? 'نوبت‌های بعدی' : 'Upcoming', value: 2, icon: Calendar, color: 'from-blue-500 to-cyan-500' },
+        { label: isRTL ? 'نسخه‌های فعال' : 'Active Rx', value: 3, icon: Prescription, color: 'from-purple-500 to-pink-500' },
+        { label: isRTL ? 'پیام‌های جدید' : 'New Messages', value: 5, icon: MessageSquare, color: 'from-emerald-500 to-teal-500' },
+    ];
+
+    const healthMetrics = [
+        { label: isRTL ? 'فشار خون' : 'Blood Pressure', value: '120/80', unit: 'mmHg', icon: Activity, color: 'red' },
+        { label: isRTL ? 'ضربان قلب' : 'Heart Rate', value: '72', unit: 'BPM', icon: Heart, color: 'pink' },
+        { label: isRTL ? 'دمای بدن' : 'Temperature', value: '36.8', unit: '°C', icon: Thermometer, color: 'orange' },
+        { label: isRTL ? 'اکسیژن خون' : 'SpO2', value: '98', unit: '%', icon: Wind, color: 'cyan' },
+    ];
+
+    const quickActions = [
+        { icon: Calendar, label: isRTL ? 'رزرو نوبت' : 'Book Appointment', href: '/doctors', color: 'from-blue-500 to-cyan-500' },
+        { icon: MessageSquare, label: isRTL ? 'پیام به پزشک' : 'Message Doctor', href: '/dashboard/messages', color: 'from-purple-500 to-pink-500' },
+        { icon: FileText, label: isRTL ? 'نسخه‌ها' : 'Prescriptions', href: '/dashboard/prescriptions', color: 'from-emerald-500 to-teal-500' },
+        { icon: Brain, label: isRTL ? 'مشاور هوش مصنوعی' : 'AI Assistant', href: '/dashboard/ai-chat', color: 'from-amber-500 to-orange-500' },
+    ];
+
+    const upcomingAppointments = [
+        { doctor: isRTL ? 'دکتر سارا احمدی' : 'Dr. Sarah Ahmadi', specialty: isRTL ? 'قلب و عروق' : 'Cardiology', date: isRTL ? '۱۵ آذر' : 'Dec 15', time: '09:30' },
+        { doctor: isRTL ? 'دکتر مریم سعادت' : 'Dr. Maryam Saadat', specialty: isRTL ? 'چشم‌پزشکی' : 'Ophthalmology', date: isRTL ? '۲۰ آذر' : 'Dec 20', time: '11:00' },
+    ];
+
+    return (
+        <div className="space-y-6 lg:space-y-8 pb-24" dir={isRTL ? 'rtl' : 'ltr'}>
+            
+            {/* Welcome Header - Navy Blue Premium */}
+            <section className="relative overflow-hidden bg-gradient-to-br from-navy-500 via-navy-600 to-navy-700 rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-10">
+                {/* Background Decorations */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute top-0 right-0 w-48 h-48 lg:w-64 lg:h-64 bg-white/5 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-48 h-48 lg:w-64 lg:h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 lg:w-96 h-64 lg:h-96 bg-gradient-to-br from-white/5 to-transparent rounded-full blur-3xl"></div>
+                    {/* Pattern */}
+                    <div className="absolute inset-0 opacity-10">
+                        <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
+                    </div>
+                </div>
+                
+                <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                    <div className="flex-1">
+                        {/* Badge */}
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4 lg:mb-6">
+                            <Sparkles className="w-4 h-4 text-amber-400" />
+                            <span className="text-white/90 text-xs font-bold uppercase tracking-widest">
+                                {isRTL ? 'پنل بیمار' : 'Patient Portal'}
+                            </span>
+                        </div>
+                        
+                        <h1 className="text-3xl lg:text-5xl font-black text-white mb-2 lg:mb-4 tracking-tight">
+                            {isRTL ? 'خوش آمدید' : 'Welcome Back'}
+                            <span className="block text-xl lg:text-2xl text-white/80 mt-2 font-medium">
+                                {userName}
+                            </span>
+                        </h1>
+                        
+                        <p className="text-white/70 text-base lg:text-lg max-w-xl leading-relaxed">
+                            {isRTL 
+                                ? 'امیدواریم روز خوبی داشته باشید. سلامتی شما اولویت ماست.'
+                                : 'Hope you have a great day. Your health is our priority.'}
+                        </p>
+                    </div>
+                    
+                    {/* Action Buttons */}
+                    <div className="flex gap-3">
+                        <button className="w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center transition-all">
+                            <Bell className="w-5 h-5 text-white" />
+                        </button>
+                        <button onClick={handleLogout} className="w-12 h-12 bg-red-500/20 hover:bg-red-500/40 backdrop-blur-sm rounded-2xl flex items-center justify-center transition-all">
+                            <LogOut className="w-5 h-5 text-white" />
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            {/* Stats Cards */}
+            <section className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+                {stats.map((stat, idx) => (
+                    <div 
+                        key={idx} 
+                        className="group relative bg-white rounded-[2rem] p-5 lg:p-6 shadow-lg hover:shadow-2xl hover:shadow-navy-500/10 border border-slate-100 hover:-translate-y-1 transition-all duration-300"
+                    >
+                        <div className={`absolute top-0 left-0 w-24 h-24 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 rounded-full blur-3xl transition-opacity`}></div>
+                        
+                        <div className="relative z-10 flex items-center gap-4 lg:gap-5">
+                            <div className={`w-12 lg:w-14 h-12 lg:h-14 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                                <stat.icon className="text-white" size={24} />
+                            </div>
+                            <div>
+                                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">{stat.label}</p>
+                                <span className="text-3xl font-black text-navy-500">{stat.value}</span>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </section>
+
+            {/* Quick Actions */}
+            <section className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+                {quickActions.map((action, idx) => (
+                    <Link
+                        key={idx}
+                        href={action.href}
+                        className="group bg-white rounded-[1.5rem] p-4 lg:p-6 shadow-lg hover:shadow-2xl hover:shadow-navy-500/10 border border-slate-100 hover:-translate-y-1 transition-all duration-300 text-center"
+                    >
+                        <div className={`w-14 lg:w-16 h-14 lg:h-16 mx-auto bg-gradient-to-br ${action.color} rounded-2xl flex items-center justify-center mb-3 lg:mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                            <action.icon className="text-white" size={28} />
+                        </div>
+                        <p className="font-bold text-xs lg:text-sm text-slate-700">{action.label}</p>
+                    </Link>
+                ))}
+            </section>
+
+            {/* Main Content Grid */}
+            <section className="grid lg:grid-cols-3 gap-6 lg:gap-8">
+                {/* Health Metrics */}
+                <div className="lg:col-span-2 bg-white rounded-[2rem] p-6 lg:p-8 shadow-lg border border-slate-100">
+                    <div className="flex items-center justify-between mb-6 lg:mb-8">
+                        <div>
+                            <h2 className="text-xl lg:text-2xl font-bold text-navy-500">{isRTL ? 'شاخص‌های سلامتی' : 'Health Metrics'}</h2>
+                            <p className="text-sm text-slate-500 mt-1">{isRTL ? 'آخرین اندازه‌گیری‌ها' : 'Latest Measurements'}</p>
+                        </div>
+                        <div className="w-10 lg:w-12 h-10 lg:h-12 bg-gradient-to-br from-navy-500 to-navy-600 rounded-2xl flex items-center justify-center shadow-lg">
+                            <Activity className="w-5 lg:w-6 h-5 lg:h-6 text-white" />
+                        </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+                        {healthMetrics.map((metric, idx) => (
+                            <div 
+                                key={idx} 
+                                className="group bg-gradient-to-br from-slate-50 to-white rounded-2xl p-4 lg:p-5 hover:from-navy-500 hover:to-navy-600 hover:text-white transition-all duration-500 border border-slate-100"
+                            >
+                                <div className="flex items-center justify-between mb-3 lg:mb-4">
+                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                                        idx === 0 ? 'bg-red-100 text-red-500' :
+                                        idx === 1 ? 'bg-pink-100 text-pink-500' :
+                                        idx === 2 ? 'bg-orange-100 text-orange-500' :
+                                        'bg-cyan-100 text-cyan-500'
+                                    } group-hover:bg-white/20 group-hover:text-white transition-colors`}>
+                                        <metric.icon size={20} />
+                                    </div>
+                                </div>
+                                <p className="text-2xl font-black mb-1">{metric.value}</p>
+                                <p className="text-xs text-slate-500 group-hover:text-white/70 font-medium">{metric.unit}</p>
+                                <p className="text-xs text-slate-400 group-hover:text-white/60 font-semibold uppercase tracking-wider mt-2">{metric.label}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Quick Menu & AI */}
+                <div className="space-y-4 lg:space-y-6">
+                    {/* Menu Card */}
+                    <div className="bg-white rounded-[2rem] p-6 lg:p-8 shadow-lg border border-slate-100">
+                        <h3 className="text-lg lg:text-xl font-bold text-navy-500 mb-4 lg:mb-6">{isRTL ? 'دسترسی سریع' : 'Quick Access'}</h3>
+                        <div className="space-y-2 lg:space-y-3">
+                            {[
+                                { icon: CalendarCheck, label: isRTL ? 'نوبت‌های من' : 'My Appointments', href: '/dashboard/appointments', color: 'blue' },
+                                { icon: Prescription, label: isRTL ? 'نسخه‌ها' : 'Prescriptions', href: '/dashboard/prescriptions', color: 'purple' },
+                                { icon: Pill, label: isRTL ? 'داروخانه' : 'Pharmacy', href: '/pharmacy', color: 'emerald' },
+                                { icon: MessageSquare, label: isRTL ? 'پیام‌ها' : 'Messages', href: '/dashboard/messages', color: 'amber' },
+                                { icon: Settings, label: isRTL ? 'تنظیمات' : 'Settings', href: '/dashboard/settings', color: 'slate' },
+                            ].map((item, idx) => (
+                                <Link
+                                    key={idx}
+                                    href={item.href}
+                                    className="flex items-center justify-between p-3 lg:p-4 rounded-xl hover:bg-slate-50 transition-all group"
+                                >
+                                    <div className="flex items-center gap-3 lg:gap-4">
+                                        <div className={`w-10 h-10 bg-${item.color}-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                                            <item.icon size={20} className={`text-${item.color}-500`} />
+                                        </div>
+                                        <span className="font-semibold text-sm text-slate-700">{item.label}</span>
+                                    </div>
+                                    <ChevronRight size={18} className="text-slate-300 group-hover:text-navy-500 transition-colors" />
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* AI Assistant */}
+                    <div className="bg-gradient-to-br from-navy-500 via-navy-600 to-navy-700 rounded-[2rem] p-6 lg:p-8 shadow-2xl shadow-navy-500/20 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-3xl"></div>
+                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-3xl"></div>
+                        
+                        <div className="relative z-10">
+                            <div className="flex items-center gap-2 mb-3 lg:mb-4">
+                                <Sparkles className="w-5 h-5 text-amber-400" />
+                                <span className="text-xs font-bold uppercase tracking-widest text-white/80">{isRTL ? 'هوش مصنوعی' : 'AI Assistant'}</span>
+                            </div>
+                            <h3 className="text-xl lg:text-2xl font-black text-white mb-2 lg:mb-3">{isRTL ? 'مشاوره هوشمند' : 'Smart Consultation'}</h3>
+                            <p className="text-white/70 text-sm mb-4 lg:mb-6 leading-relaxed">
+                                {isRTL 
+                                    ? 'با هوش مصنوعی ما به صورت ۲۴ ساعته مشاوره دریافت کنید.'
+                                    : 'Get 24/7 consultation with our AI assistant.'}
+                            </p>
+                            <Link 
+                                href="/dashboard/ai-chat" 
+                                className="inline-flex items-center gap-2 px-5 py-3 bg-white text-navy-500 rounded-xl font-bold text-sm hover:shadow-xl transition-all group"
+                            >
+                                {isRTL ? 'شروع گفتگو' : 'Start Chat'}
+                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Upcoming Appointments */}
+            <section className="bg-white rounded-[2rem] p-6 lg:p-8 shadow-lg border border-slate-100">
+                <div className="flex items-center justify-between mb-6 lg:mb-8">
+                    <div>
+                        <h2 className="text-xl lg:text-2xl font-bold text-navy-500">{isRTL ? 'نوبت‌های آینده' : 'Upcoming Appointments'}</h2>
+                        <p className="text-sm text-slate-500 mt-1">{isRTL ? 'برنامه‌ریزی شده' : 'Scheduled'}</p>
+                    </div>
+                    <Link 
+                        href="/dashboard/appointments" 
+                        className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-navy-500 to-navy-600 text-white rounded-xl font-semibold text-sm hover:shadow-lg hover:shadow-navy-500/20 transition-all"
+                    >
+                        {isRTL ? 'مشاهده همه' : 'View All'}
+                    </Link>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-4">
+                    {upcomingAppointments.map((apt, idx) => (
+                        <div 
+                            key={idx} 
+                            className="group relative overflow-hidden bg-gradient-to-br from-slate-50 to-white rounded-2xl p-4 lg:p-5 hover:from-navy-500 hover:to-navy-600 hover:text-white transition-all duration-500 border border-slate-100"
+                        >
+                            <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+                            
+                            <div className="relative z-10 flex items-center justify-between">
+                                <div className="flex items-center gap-3 lg:gap-4">
+                                    <div className="w-12 lg:w-14 h-12 lg:h-14 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform duration-300">
+                                        {apt.doctor.charAt(0)}
+                                    </div>
+                                    <div>
+                                        <p className="font-bold text-base lg:text-lg">{apt.doctor}</p>
+                                        <p className="text-sm text-slate-500 group-hover:text-white/70">{apt.specialty}</p>
+                                    </div>
+                                </div>
+                                <div className="text-left">
+                                    <p className="font-bold">{apt.date}</p>
+                                    <p className="text-sm text-slate-500 group-hover:text-white/70">{apt.time}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+        </div>
+    );
+}
+

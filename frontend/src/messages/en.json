@@ -1,0 +1,440 @@
+{
+    "nav": {
+        "home": "Home",
+        "services": "Services",
+        "doctors": "Doctors",
+        "about": "About",
+        "contact": "Contact",
+        "getStarted": "Get Started",
+        "login": "Login",
+        "signup": "Sign Up",
+        "dashboard": "Dashboard",
+        "logout": "Logout"
+    },
+    "home": {
+        "nav": {
+            "doctors": "Doctors",
+            "services": "Services",
+            "about": "About"
+        },
+        "hero": {
+            "verified": "Verified Healthcare Network",
+            "title": "Smart Health Platform <span class='text-blue-500'>AI-Powered</span>",
+            "subtitle": "Connecting you with top specialists and AI diagnostics for faster, smarter medical care.",
+            "searchPlaceholder": "Search by specialty, doctor name..."
+        },
+        "mission": {
+            "mission": "Our Mission",
+            "missionDesc": "To digitize healthcare for everyone, everywhere.",
+            "vision": "Our Vision",
+            "visionDesc": "A future where AI and humans collaborate for health.",
+            "who": "Who We Are",
+            "whoDesc": "A team of medical experts and AI researchers."
+        },
+        "about": {
+            "tag": "About DoctorHub",
+            "title": "We provide best <br/> medical service",
+            "p1": "DoctorHub is a pioneer in integrating advanced AI with human expertise to deliver accessible, efficient, and personalized healthcare solutions.",
+            "p2": "Our mission is to empower patients with real-time insights and connect them with world-class specialists seamlessly.",
+            "feature1": "24/7 AI Assistance",
+            "feature2": "Verified Specialists",
+            "feature3": "Secure Medical Records"
+        },
+        "services": {
+            "tag": "Our Services",
+            "title": "Personalized Care",
+            "subtitle": "Explore our wide range of medical services powered by smart technology.",
+            "viewAll": "View All Services"
+        },
+        "testimonials": {
+            "tag": "Testimonials",
+            "title": "What Our Patients Say"
+        },
+        "cta": {
+            "title": "Ready to get started?",
+            "subtitle": "Join thousands of patients who trust DoctorHub for their health management.",
+            "button": "Create Free Account"
+        }
+    },
+    "auth": {
+        "welcomeBack": "Welcome Back",
+        "joinDoctorHub": "Join DoctorHub",
+        "phoneNumber": "Phone Number",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "forgotPassword": "Forgot Password?",
+        "dontHaveAccount": "Don't have an account?",
+        "alreadyHaveAccount": "Already have an account?",
+        "registerNow": "Register Now",
+        "signIn": "Sign In",
+        "iAmA": "I am a",
+        "patient": "Patient",
+        "doctor": "Doctor",
+        "admin": "Admin",
+        "createAccount": "Create Account",
+        "enterCredentials": "Enter your credentials to access your account"
+    },
+    "dashboard": {
+        "nav": {
+            "adminPanel": "Admin Panel",
+            "userManagement": "User Management",
+            "finance": "Financial Reports",
+            "systemSettings": "System Settings",
+            "doctorPanel": "Doctor Panel",
+            "prescriptions": "E-Prescriptions",
+            "myPatients": "My Patients",
+            "schedule": "Schedule Management",
+            "myDashboard": "My Dashboard",
+            "myAppointments": "My Appointments",
+            "invoices": "Invoices",
+            "messages": "Messages",
+            "settings": "Settings",
+            "logout": "Logout",
+            "proVersion": "Pro Version",
+            "proDesc": "Access to unlimited consultations and priority booking.",
+            "upgrade": "Upgrade Account"
+        },
+        "roles": {
+            "admin": "System Admin",
+            "doctor": "Specialist",
+            "patient": "Patient",
+            "allAccess": "All Access"
+        },
+        "patient": {
+            "welcome": "Welcome back",
+            "healthOverview": "Here's your health overview",
+            "upcomingAppointments": "Upcoming Appointments",
+            "activePrescriptions": "Active Prescriptions",
+            "healthRecords": "Health Records",
+            "heartRateAvg": "Heart Rate Avg",
+            "viewAll": "View All",
+            "duration": "Duration",
+            "prescribed": "Prescribed",
+            "healthInsights": "Health Insights",
+            "insightsMsg": "Your health metrics are looking good! Keep up with your medication schedule and upcoming appointments.",
+            "status": {
+                "active": "Active",
+                "completed": "Completed"
+            },
+            "at": "at"
+        },
+"doctor": {
+            "consultations": "Consultations",
+            "avgRating": "Avg Rating",
+            "goodMorning": "Good Morning, Dr.",
+            "totalPatients": "Total Patients",
+            "patientsToday": "You have {count} patients scheduled today",
+            "todayPatients": "Today's Patients",
+            "appointments": "Appointments",
+            "prescriptions": "Prescriptions",
+            "avgVisitTime": "Avg Visit Time",
+            "todaySchedule": "Today's Schedule",
+            "recentPatients": "Recent Patients",
+            "search": "Search",
+            "viewCalendar": "View Calendar",
+            "newPrescription": "New Prescription",
+            "aiAssisted": "AI-assisted prescribing",
+            "scheduleManagement": "Schedule Management",
+            "updateAvailability": "View & update availability",
+            "patientRecords": "Patient Records",
+            "accessHistory": "Access medical histories",
+            "lastVisit": "Last visit",
+            "status": {
+                "confirmed": "Confirmed",
+                "pending": "Pending",
+                "stable": "Stable",
+                "monitoring": "Monitoring",
+                "discharged": "Discharged",
+                "inpatient": "Inpatient",
+                "active": "Active",
+                "closed": "Closed",
+                "approved": "Approved",
+                "blocked": "Blocked"
+            },
+            "consultation": "Consultation",
+            "followUp": "Follow-up",
+            "checkUp": "Check-up",
+            "myPatientsBank": "My Patients Bank",
+            "pBankDesc": "Manage private medical files and records of your patients.",
+            "addPatient": "Add Patient",
+            "viewProfile": "View Profile",
+            "age": "Age",
+            "years": "years",
+            "bloodGroup": "Blood Group",
+            "male": "Male",
+            "female": "Female",
+            "scheduleDesc": "Set availability hours and daily appointment capacity.",
+            "updateCalendar": "Update Calendar",
+            "myWeeklySchedule": "My Weekly Schedule",
+            "absence": "Absence",
+            "capacity": "Capacity",
+            "slots": "Slots",
+            "bookingSettings": "Booking Settings",
+            "visitDuration": "Visit Duration (Minutes)",
+            "reserveAdvance": "Book how many days in advance?",
+            "emergencyAccept": "Accept Emergency Appointments",
+            "saveSettings": "Save Settings",
+            "until": "until"
+        },
+        "admin": {
+            "systemOverview": "System Overview",
+            "monitorManage": "Monitor and manage your healthcare platform",
+            "totalUsers": "Total Users",
+            "activeAppointments": "Active Appointments",
+            "systemHealth": "System Health",
+            "aiUsage": "AI Usage",
+            "userManagement": "User Management",
+            "systemStatistics": "System Statistics",
+            "aiConfiguration": "AI Configuration",
+            "activityLogs": "Activity Logs",
+            "viewAll": "View All",
+            "joined": "Joined",
+            "dbLoad": "Database Load",
+            "apiResponse": "API Response Time",
+            "storageUsed": "Storage Used",
+            "currentProvider": "Current provider",
+            "usage": "Usage",
+            "status": "Status",
+            "healthy": "Healthy",
+            "configureAI": "Configure AI",
+            "viewLogs": "View Logs",
+            "requests": "requests",
+            "memberMgmt": "Member Management",
+            "memberDesc": "Control access, verify doctors, and manage platform users.",
+            "exportExcel": "Export to Excel",
+            "addNewMember": "Add New Member",
+            "filters": {
+                "all": "All",
+                "doctors": "Doctors",
+                "patients": "Patients",
+                "admins": "Admins"
+            },
+            "table": {
+                "id": "ID",
+                "user": "User",
+                "role": "Role",
+                "joinedDate": "Joined Date",
+                "status": "Status",
+                "actions": "Actions",
+                "manage": "Manage"
+            },
+            "finance": {
+                "title": "Financial Reports",
+                "desc": "Track revenues, payments, and financial health of the platform.",
+                "totalRevenue": "Total Revenue",
+                "monthlyGrowth": "Monthly Growth",
+                "pendingPayments": "Pending Payments",
+                "completedTransactions": "Completed Transactions",
+                "revenueChart": "Revenue Over Time",
+                "recentTransactions": "Recent Transactions",
+                "amount": "Amount",
+                "date": "Date",
+                "method": "Method",
+                "invoice": "Invoice"
+            }
+        },
+        "settings": {
+            "title": "Settings",
+            "tabs": {
+                "profile": "Personal Profile",
+                "security": "Security & Password",
+                "notifications": "Notifications"
+            },
+            "profile": {
+                "changePhoto": "Change Photo",
+                "photoDesc": "Your photo will be displayed on all pages and chats. Use a clear photo.",
+                "uploadNew": "Upload New Photo",
+                "remove": "Remove Photo",
+                "firstName": "First Name",
+                "lastName": "Last Name",
+                "phone": "Phone Number",
+                "email": "Email",
+                "bio": "Short Bio",
+                "bioPlaceholder": "Write something about yourself...",
+                "saveChanges": "Save All Changes"
+            },
+            "security": {
+                "changePassword": "Change Password",
+                "passwordDesc": "For better security, it is recommended to change your password every few months.",
+                "currentPassword": "Current Password",
+                "newPassword": "New Password",
+                "confirmPassword": "Confirm New Password",
+                "update": "Update Password",
+                "deleteAccount": "Delete Account",
+                "deleteDesc": "By deleting your account, all your medical information and appointments will be erased.",
+                "deletePermanently": "Delete Permanently"
+            },
+            "notifications": {
+                "title": "Notification Settings",
+                "desc": "Manage how you receive news and reminders.",
+                "save": "Save Settings",
+                "items": {
+                    "reminders": "Appointment Reminders (SMS)",
+                    "remindersDesc": "You will receive an SMS one day before your visit.",
+                    "newsletter": "Medical Newsletter",
+                    "newsletterDesc": "Latest medical articles and health news in your email.",
+                    "discounts": "Pharmacy Discounts",
+                    "discountsDesc": "Notification about drug and equipment sales festivals.",
+                    "updates": "Platform Updates",
+                    "updatesDesc": "System changes and new platform features."
+                }
+            }
+        }
+    },
+    "notifications": {
+        "title": "Notifications",
+        "all": "All",
+        "unread": "Unread",
+        "messages": "Messages",
+        "new": "New messages",
+        "markAllRead": "Mark all read",
+        "search": "Search...",
+        "noNotifications": "No notifications yet",
+        "noNotificationsDesc": "Your notifications will appear here",
+        "viewAll": "View All Notifications",
+        "settings": "Settings",
+        "categories": {
+            "all": "All",
+            "appointments": "Appointments",
+            "prescriptions": "Prescriptions",
+            "messages": "Messages",
+            "lab": "Lab Results"
+        },
+        "types": {
+            "success": "Success",
+            "warning": "Warning",
+            "error": "Error",
+            "appointment": "Appointment",
+            "message": "Message",
+            "prescription": "Prescription",
+            "pharmacy": "Pharmacy",
+            "lab": "Lab",
+            "payment": "Payment",
+            "document": "Document",
+            "system": "System",
+            "health_alert": "Health Alert",
+            "reminder": "Reminder",
+            "emergency": "Emergency"
+        },
+        "priority": {
+            "urgent": "Urgent",
+            "high": "High",
+            "medium": "Medium",
+            "low": "Low"
+        },
+        "actions": {
+            "view": "View",
+            "delete": "Delete",
+            "actionRequired": "Action Required"
+        },
+        "time": {
+            "now": "Just now",
+            "minutesAgo": "{count}m ago",
+            "hoursAgo": "{count}h ago",
+            "daysAgo": "{count}d ago"
+        }
+    },
+    "common": {
+        "loading": "Loading...",
+        "error": "Error",
+        "success": "Success",
+        "save": "Save",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "edit": "Edit",
+        "view": "View",
+        "download": "Download",
+        "upload": "Upload",
+        "search": "Search",
+        "filter": "Filter",
+        "sort": "Sort",
+        "explore": "Explore Details",
+        "currency": "Toman",
+        "online": "Online",
+        "offline": "Offline",
+        "daysAgo": "{count} days ago",
+        "weeksAgo": "{count} weeks ago",
+        "yesterday": "Yesterday",
+        "today": "Today"
+    },
+    "doctors": {
+        "hero": {
+            "tag": "Find Specialists",
+            "title": "Find Your Specialist",
+            "subtitle": "Connect with verified healthcare professionals"
+        },
+        "search": {
+            "placeholder": "Search doctors by name or specialty...",
+            "showingResults": "Showing {count} results",
+            "popular": "Most Popular",
+            "noResults": "No doctors found",
+            "tryDifferent": "Try adjusting your search criteria"
+        },
+        "specialties": {
+            "all": "All Specialties"
+        },
+        "card": {
+            "exp": "Years Experience",
+            "consultation": "Consultation Fee",
+            "session": "per session",
+            "bookNow": "Book Now",
+            "availability": {
+                "today": "Available Today"
+            }
+        }
+    },
+    "pharmacy": {
+        "hero": {
+            "tag": "Online Pharmacy",
+            "title": "Your Trusted Pharmacy",
+            "subtitle": "Order medicines with prescription",
+            "searchPlaceholder": "Search for medicines..."
+        },
+        "categories": "Categories",
+        "products": "Products",
+        "addToCart": "Add to Cart",
+        "outOfStock": "Out of Stock",
+        "viewAll": "View All"
+    },
+    "services": {
+        "hero": {
+            "tag": "Our Services",
+            "title": "Healthcare Services",
+            "subtitle": "Comprehensive medical care"
+        }
+    },
+    "days": {
+        "sat": "Saturday",
+        "sun": "Sunday",
+        "mon": "Monday",
+        "tue": "Tuesday",
+        "wed": "Wednesday",
+        "thu": "Thursday",
+        "fri": "Friday"
+    },
+    "chat": {
+        "title": "AI Health Assistant",
+        "persona": "Medical AI",
+        "greeting": "Hello! I'm your AI health assistant",
+        "subtitle": "Ask me any medical questions and I'll provide instant responses",
+        "placeholder": "Type your question...",
+        "clear": "Clear chat",
+        "researchMode": "RESEARCH MODE ON",
+        "aiOnly": "AI ONLY",
+        "sourcesFound": "Sources Found:",
+        "match": "Match",
+        "error": "Something went wrong. Please try again.",
+        "connectionError": "Connection error. Please check your internet.",
+        "prompts": {
+            "cold": "I have a cold",
+            "heart": "Heart health",
+            "allergy": "Allergy symptoms",
+            "pharmacy": "Order medicine",
+            "headache": "Headache",
+            "fever": "Fever"
+        }
+    }
+}
+

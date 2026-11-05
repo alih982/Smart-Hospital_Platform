@@ -1,0 +1,123 @@
+# ============================================
+# Docker Compose - AI Service (Standalone)
+# با یک Dockerfile واحد برای سرویس و فاین‌تیون
+# ============================================
+version: '3.8'
+
+services:
+  # ══════════════════════════════════════════
+  # 1. PostgreSQL (مخصوص AI Service)
+  # ══════════════════════════════════════════
+  postgres_ai:
+    image: postgres:15-alpine
+    container_name: ai-postgres-dev
+    restart: unless-stopped
+    volumes:
+      - postgres_ai_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ai_service
+      POSTGRES_USER: ai_user
+      POSTGRES_PASSWORD: ai_secret_123
+    ports:
+      - "5433:5432"   # پورت متفاوت با ریشه پروژه
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ai_user -d ai_service"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ══════════════════════════════════════════
+  # 2. Redis (برای Cache و Celery در صورت نیاز)
+  # ══════════════════════════════════════════
+  redis_ai:
+    image: redis:7-alpine
+    container_name: ai-redis-dev
+    restart: unless-stopped
+    volumes:
+      - redis_ai_data:/data
+    ports:
+      - "6380:6379"   # پورت متفاوت
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  # ══════════════════════════════════════════
+  # 3. سرویس AI (FastAPI + llama-cpp)
+  # ══════════════════════════════════════════
+  ai_service:
+    build:
+      context: .
+      dockerfile: Dockerfile   # ← همان فایل واحد
+    container_name: smarthealth-ai-service-dev
+    restart: unless-stopped
+    volumes:
+      - .:/app
+      - ./app/ai_model:/app/app/ai_model
+      - ./app/lora_model:/app/app/lora_model   # ← حفظ شده
+      - ./app/data:/app/app/data
+      - ./reports:/reports
+    ports:
+      - "5001:5000"
+    env_file:
+      - ./.env
+    environment:
+      - DB_HOST=postgres_ai
+      - REDIS_HOST=redis_ai
+      - DB_URL=postgresql+psycopg2://ai_user:ai_secret_123@postgres_ai:5432/ai_service
+      - MLFLOW_TRACKING_URI=http://mlflow:5001
+      - RUN_MODE=service   # اختیاری: مشخص می‌کند در حالت سرویس است
+    depends_on:
+      postgres_ai:
+        condition: service_healthy
+      redis_ai:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
+    cpu_shares: 512
+    # دستور پیش‌فرض در Dockerfile اجرا می‌شود (uvicorn)
+
+  # ══════════════════════════════════════════
+  # 4. Job فاین‌تیون (Retrain) - MLOps
+  # ══════════════════════════════════════════
+  retrain_job:
+    build:
+      context: .
+      dockerfile: Dockerfile   # ← همان فایل واحد
+    container_name: ai-retrain-job-dev
+    profiles:
+      - retrain   # فقط با --profile retrain اجرا می‌شود
+    volumes:
+      - .:/app
+      - ./app/ai_model:/app/app/ai_model
+      - ./app/lora_model:/app/app/lora_model   # ← حفظ شده
+      - ./data:/app/data
+      - ./reports:/reports
+    env_file:
+      - ./.env
+    environment:
+      - DB_HOST=postgres_ai
+      - REDIS_HOST=redis_ai
+      - DB_URL=postgresql+psycopg2://ai_user:ai_secret_123@postgres_ai:5432/ai_service
+      - MLFLOW_TRACKING_URI=http://mlflow:5001
+      - RUN_MODE=finetune   # ← این متغیر باعث می‌شود اسکریپت retrain.sh اجرا شود
+    depends_on:
+      - postgres_ai
+      - redis_ai
+    # override کردن entrypoint و command
+    entrypoint: ["/bin/bash", "retrain.sh"]
+    command: []
+    # اگر می‌خواهید آرگومان‌های پیش‌فرض را بدهید:
+    # command: ["--new-data", "/app/data/new_samples.json", "--output-dir", "/app/app/ai_model/20260808_143022"]
+
+volumes:
+  postgres_ai_data:
+  redis_ai_data:

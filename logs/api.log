@@ -1,0 +1,38 @@
+[INFO] 2026-07-26 08:53:24 api logging.process_request:26 - REQUEST GET /health/
+[INFO] 2026-07-26 08:53:24 api logging.process_response:53 - RESPONSE GET /health/ 200 (0.013s)
+[INFO] 2026-07-26 08:55:23 api logging.process_request:26 - REQUEST GET /health/
+[INFO] 2026-07-26 08:55:23 api logging.process_response:53 - RESPONSE GET /health/ 200 (0.039s)
+[INFO] 2026-07-26 08:55:23 api logging.process_request:26 - REQUEST GET /
+[WARNING] 2026-07-26 08:55:23 api logging.process_response:53 - RESPONSE GET / 404 (0.009s)
+[INFO] 2026-07-26 10:44:48 api logging.process_request:26 - REQUEST GET /health/
+[INFO] 2026-07-26 10:44:49 api logging.process_response:53 - RESPONSE GET /health/ 200 (0.167s)
+[INFO] 2026-07-26 10:47:06 api logging.process_request:26 - REQUEST GET /health/
+[INFO] 2026-07-26 10:47:06 api logging.process_response:53 - RESPONSE GET /health/ 200 (0.033s)
+[INFO] 2026-07-26 10:49:03 api logging.process_request:26 - REQUEST GET /admin
+[WARNING] 2026-07-26 10:49:03 api logging.process_response:53 - RESPONSE GET /admin 404 (0.007s)
+[INFO] 2026-07-26 10:49:03 api logging.process_request:26 - REQUEST GET /en/admin/
+[INFO] 2026-07-26 10:49:04 api logging.process_response:53 - RESPONSE GET /en/admin/ 302 (0.178s)
+[INFO] 2026-07-26 10:49:04 api logging.process_request:26 - REQUEST GET /en/admin/login/
+[INFO] 2026-07-26 10:49:04 api logging.process_response:53 - RESPONSE GET /en/admin/login/ 200 (0.016s)
+[INFO] 2026-07-26 10:49:04 api logging.process_request:26 - REQUEST GET /favicon.ico
+[WARNING] 2026-07-26 10:49:04 api logging.process_response:53 - RESPONSE GET /favicon.ico 404 (0.015s)
+[INFO] 2026-07-26 10:49:04 api logging.process_request:26 - REQUEST GET /admin
+[WARNING] 2026-07-26 10:49:04 api logging.process_response:53 - RESPONSE GET /admin 404 (0.005s)
+[INFO] 2026-07-26 10:49:04 api logging.process_request:26 - REQUEST GET /en/admin/
+[INFO] 2026-07-26 10:49:04 api logging.process_response:53 - RESPONSE GET /en/admin/ 302 (0.009s)
+[INFO] 2026-07-26 10:49:04 api logging.process_request:26 - REQUEST GET /en/admin/login/
+[INFO] 2026-07-26 10:49:04 api logging.process_response:53 - RESPONSE GET /en/admin/login/ 200 (0.002s)
+[INFO] 2026-07-26 13:34:12 api logging.process_request:26 - REQUEST GET /health/
+[INFO] 2026-07-26 13:34:12 api logging.process_response:53 - RESPONSE GET /health/ 200 (0.184s)
+[INFO] 2026-07-26 14:08:35 api logging.process_request:26 - REQUEST GET /health/
+[INFO] 2026-07-26 14:08:36 api logging.process_response:53 - RESPONSE GET /health/ 200 (0.180s)
+[INFO] 2026-07-26 15:49:21 api logging.process_request:26 - REQUEST GET /health/
+[INFO] 2026-07-26 15:49:21 api logging.process_response:53 - RESPONSE GET /health/ 200 (0.072s)
+[INFO] 2026-08-12 14:12:22 api logging.process_request:26 - REQUEST GET /
+[WARNING] 2026-08-12 14:12:22 api logging.process_response:53 - RESPONSE GET / 404 (0.015s)
+[INFO] 2026-08-12 14:12:23 api logging.process_request:26 - REQUEST GET /en/
+[INFO] 2026-08-12 14:12:23 api logging.process_response:53 - RESPONSE GET /en/ 302 (0.407s)
+[INFO] 2026-08-12 14:12:23 api logging.process_request:26 - REQUEST GET /auth/login/
+[WARNING] 2026-08-12 14:12:23 api logging.process_response:53 - RESPONSE GET /auth/login/ 404 (0.003s)
+[INFO] 2026-08-12 14:12:23 api logging.process_request:26 - REQUEST GET /en/auth/login/
+[INFO] 2026-08-12 14:12:23 api logging.process_response:53 - RESPONSE GET /en/auth/login/ 302 (0.000s)
